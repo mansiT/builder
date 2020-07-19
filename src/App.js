@@ -6,9 +6,9 @@ const API_KEY = '4ca7d329db974aba92b7340c4269ddfe';
 
 function App() {
   return (
-    <Router>
-      <div>
-{/*          <ul>
+   <Router>
+     <div>
+        {/*    <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -24,12 +24,12 @@ function App() {
           <li>
             <Link to="/page-2">Builder Page 2</Link>
           </li>
-        </ul> */}
+        </ul> 
 
         <hr /> 
 
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/about" component={About} /> */}
         <Route render={({ location }) => <CatchallPage key={location.key} />} />
       </div>
     </Router>
