@@ -1,28 +1,33 @@
 {
+  "name": "starter-react",
+  "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "@builder.io/block-publish": "^1.1.2",
-    "lerna": "^3.20.2"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BuilderIO/builder"
+  "dependencies": {
+    "@builder.io/react": "^1.0.56",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1"
   },
   "scripts": {
-    "verify-git-not-dirty": "git diff --quiet || exit 1",
-    "_unlink": "lerna run _unlink --parallel",
-    "_install": "lerna run _install --parallel",
-    "install:packages": "npm run _install",
-    "bootstrap": "lerna bootstrap --force-local",
-    "reset": "npm run _install && npm run bootstrap && npm run _unlink",
-    "watch": "npm run start",
-    "develop": "npm run start",
-    "build": "lerna run build --stream --no-private --ignore @builder.io/plugin-loader --ignore @builder.io/plugin-shopify --ignore @builder.io/memsource-connector",
-    "release:patch": "npm run verify-git-not-dirty && npm run build && lerna version patch --yes && lerna run build:unpkg:dist --no-private && ALLOW_PUBLISH=true lerna publish from-package --yes",
-    "release:minor": "npm run verify-git-not-dirty && npm run build && lerna version minor --yes && lerna run build:unpkg:dist --no-private && ALLOW_PUBLISH=true lerna publish from-package --yes",
-    "release:prerelease:dev": "npm run build && lerna version prerelease --yes && lerna run build:unpkg:dist --no-private && ALLOW_PUBLISH=true lerna publish from-package --dist-tag dev --yes",
-    "release:dev": "npm run release:prerelease:dev",
-    "prepublishOnly": "block-publish"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
