@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { BuilderComponent } from '@builder.io/react';
 
@@ -36,7 +37,7 @@ function App() {
   );
 }
 
-function Home() {
+/* function Home() {
   return (
     <div>
       <h2>Home</h2>
@@ -50,7 +51,7 @@ function About() {
       <h2>About</h2>
     </div>
   );
-}
+} */
 
 class CatchallPage extends React.Component {
   state = { notFound: false };
