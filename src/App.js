@@ -1,57 +1,17 @@
 import React from 'react';
-// eslint-disable-next-line
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { BuilderComponent } from '@builder.io/react';
+import { ClipLoader } from 'react-spinners';
 
 const API_KEY = '4ca7d329db974aba92b7340c4269ddfe';
 
 function App() {
   return (
    <Router>
-     <div>
-        {/*    <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-          <li>
-            <Link to="/page-1">Builder Page 1</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Builder Page 2</Link>
-          </li>
-        </ul> 
-
-        <hr /> 
-
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} /> */}
-        <Route render={({ location }) => <CatchallPage key={location.key} />} />
-      </div>
+      <Route render={({ location }) => <CatchallPage key={location.key} />} />
     </Router>
   );
 }
-
-/* function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-} */
 
 class CatchallPage extends React.Component {
   state = { notFound: false };
@@ -67,7 +27,15 @@ class CatchallPage extends React.Component {
           }
         }}
       >
-        <div className="loading">Loading...</div>
+        <div style={{
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+          <ClipLoader color="#4a4e53" size={70} />
+        </div>
       </BuilderComponent>
     ) : (
       <NotFound />
